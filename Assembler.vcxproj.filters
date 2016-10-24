@@ -17,6 +17,7 @@
   <ItemGroup>
     <Text Include="ReadMe.txt" />
     <Text Include="Source.txt" />
+    <Text Include="ExitCodes.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">

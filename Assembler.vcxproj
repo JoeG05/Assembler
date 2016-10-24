@@ -138,6 +138,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Text Include="ExitCodes.txt" />
     <Text Include="ReadMe.txt" />
     <Text Include="Source.txt" />
   </ItemGroup>

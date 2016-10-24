@@ -10,7 +10,7 @@ FileAccess::FileAccess( int argc, char *argv[] )
     // Check that there is exactly one run time parameter.
     if( argc != 2 ) {
         cerr << "Usage: Assem <FileName>" << endl;
-        exit( 1 );
+        exit( 15 );
     }
     // Open the file.  One might question if this is the best place to open the file.
     // One might also question whether we need a file access class.
@@ -20,7 +20,7 @@ FileAccess::FileAccess( int argc, char *argv[] )
     if( ! m_sfile ) {
         cerr << "Source file could not be opened, assembler terminated."
             << endl;
-        exit( 1 ); 
+        exit( 3 ); 
     }
 }
 FileAccess::~FileAccess( )
