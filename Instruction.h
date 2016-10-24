@@ -20,10 +20,16 @@ public:
         ST_End                    // end instruction.
     };
     // Parse the Instruction.
-    InstructionType ParseInstruction( string &a_buff );
+    InstructionType ParseInstruction( string &a_buff )
+	{
+		return ST_Comment;
+	}
 
     // Compute the location of the next instruction.
-    int LocationNextInstruction( int a_loc );
+	int LocationNextInstruction(int a_loc)
+	{
+		return a_loc + 1;
+	}
 
     // To access the label
     inline string &GetLabel( ) {
