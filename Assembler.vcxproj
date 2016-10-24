@@ -139,6 +139,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
+    <Text Include="Source.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Assembler.h" />

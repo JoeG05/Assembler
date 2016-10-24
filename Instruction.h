@@ -22,12 +22,14 @@ public:
     // Parse the Instruction.
     InstructionType ParseInstruction( string &a_buff )
 	{
+		// PUTBACK
 		return ST_Comment;
 	}
 
     // Compute the location of the next instruction.
 	int LocationNextInstruction(int a_loc)
 	{
+		// PUTBACK
 		return a_loc + 1;
 	}
 
