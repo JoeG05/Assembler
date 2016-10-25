@@ -19,6 +19,8 @@
 #include <string>
 #include <windows.h>
 #include <map>
+#include <sstream>
+#include <iterator>
 
 using namespace std;
 

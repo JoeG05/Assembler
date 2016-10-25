@@ -20,18 +20,13 @@ public:
         ST_End                    // end instruction.
     };
     // Parse the Instruction.
-    InstructionType ParseInstruction( string &a_buff )
-	{
-		// PUTBACK
-		return ST_Comment;
-	}
+	InstructionType ParseInstruction(string &a_buff);
+	
+		// TODO: Get instruction type
+		
 
     // Compute the location of the next instruction.
-	int LocationNextInstruction(int a_loc)
-	{
-		// PUTBACK
-		return a_loc + 1;
-	}
+	int LocationNextInstruction(int a_loc);
 
     // To access the label
     inline string &GetLabel( ) {
@@ -44,6 +39,9 @@ public:
         return ! m_Label.empty();
     };
 
+	void toUpper(string &opcode);
+
+	bool isAssembler(string &opcode);
 
 private:
 
