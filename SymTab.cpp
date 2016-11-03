@@ -31,6 +31,7 @@ void SymbolTable::AddSymbol( string &a_symbol, int a_loc )
     }
     // Record a the  location in the symbol table.
     m_symbolTable[a_symbol] = a_loc;
+	a_symbol = "";
 }
 
 void SymbolTable::DisplaySymbolTable()
