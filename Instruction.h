@@ -8,7 +8,7 @@ class Instruction {
 
 public:
 
-    Instruction( ) { };
+	Instruction() {  };
     ~Instruction( ) { };
 
     // Codes to indicate the type of instruction we are processing.  Why is this inside the
@@ -60,6 +60,7 @@ private:
 
     bool m_IsNumericOperand;// == true if the operand is numeric.
     int m_OperandValue;   // The value of the operand if it is numeric.
+	
 };
 
 

@@ -6,12 +6,13 @@ Instruction::InstructionType Instruction::ParseInstruction(string &a_buff)
 {
 	
 	m_instruction = a_buff;		// store original instruction
-	int a_loc = 0;
+	
 
 	int commentpos;
 	commentpos = (int)a_buff.find_first_of(';');	// finds first ;
 
 	string line = a_buff.substr(0, commentpos);		// stores line without comment
+
 
 	istringstream s(line);
 
@@ -25,15 +26,19 @@ Instruction::InstructionType Instruction::ParseInstruction(string &a_buff)
 		// Line contains a label
 	{
 		s >> m_Label >> m_OpCode >> m_Operand;
+		toUpper(m_OpCode);
+		
 		
 		if (isAssembler(m_OpCode) == true)
 		{
 			m_type = ST_AssemblerInstr;
+			
 			return ST_AssemblerInstr;
 		}
 		else
 		{
 			m_type = ST_MachineLanguage;
+			
 			return ST_MachineLanguage;
 		}
 	}
@@ -42,6 +47,8 @@ Instruction::InstructionType Instruction::ParseInstruction(string &a_buff)
 		// Line does not contain a label
 	{
 		s >> m_OpCode >> m_Operand;
+		toUpper(m_OpCode);
+		
 	}
 
 	
@@ -59,12 +66,14 @@ int Instruction::LocationNextInstruction(int a_loc)
 {
 	if (m_OpCode == "ORG")
 	{
-		a_loc = m_OperandValue;
+		this->m_OperandValue = stoi(this->m_Operand);
+		a_loc = this->m_OperandValue;
 	}
 	
 	else if (m_OpCode == "DS")
 	{
-		a_loc = a_loc + m_OperandValue;
+		this->m_OperandValue = stoi(this->m_Operand);
+		a_loc = a_loc + this->m_OperandValue;
 	}
 
 	else
