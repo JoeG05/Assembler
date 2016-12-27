@@ -48,6 +48,18 @@ Instruction::InstructionType Instruction::ParseInstruction(string &a_buff)
 	{
 		s >> m_OpCode >> m_Operand;
 		toUpper(m_OpCode);
+
+		if (isAssembler(m_OpCode) == true)
+		{
+			m_type = ST_AssemblerInstr;
+			return ST_AssemblerInstr;
+		}
+		
+		else
+		{
+			m_type = ST_MachineLanguage;
+			return ST_MachineLanguage;
+		}
 		
 	}
 
