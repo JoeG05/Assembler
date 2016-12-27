@@ -53,7 +53,7 @@ void Assembler::PassI( )
         }
         // Compute the location of the next instruction.
         loc = m_inst.LocationNextInstruction( loc );
-		cout << loc << "   " << line << endl;
+		//cout << loc << "   " << line << endl;
     }
 }
 
