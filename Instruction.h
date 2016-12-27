@@ -33,6 +33,11 @@ public:
 
         return m_Label;
     };
+
+	inline string GetOriginalInstruction()
+	{
+		return m_instruction;
+	}
     // To determine if a label is blank.
     inline bool isLabel( ) {
 
