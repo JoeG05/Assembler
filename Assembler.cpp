@@ -57,3 +57,51 @@ void Assembler::PassI( )
     }
 }
 
+void Assembler::PassII()
+{
+	m_facc.rewind();
+	int loc = 0;
+	
+
+	cout << "Translation:" << endl;
+	cout << "Location    Contents    Original" << endl;
+
+	bool end = false;
+
+	for (;;)
+	{
+		string line;
+		if (!m_facc.GetNextLine(line))
+		{
+			if (end == false)
+			{
+				string error = "No end statement";
+				Errors::RecordError(error);
+			}
+			return;
+		}
+
+		Instruction::InstructionType st = m_inst.ParseInstruction(line);
+
+		if (st == Instruction::ST_Comment)
+		{
+			cout << "		" << m_inst.GetOriginalInstruction();
+			continue;
+		}
+
+		else if (st == Instruction::ST_End)
+		{
+			end = true;
+			if (!m_facc.GetNextLine(line))
+			{
+				cout << "     " << m_inst.GetOriginalInstruction();
+				continue;
+			}
+			else
+			{
+				cout << "     " << m_inst.GetOriginalInstruction();
+				return;
+			}
+		}
+	}
+}
